@@ -11,7 +11,7 @@ class Application(Frame):  # Application is a Frame (inheritance from Frame)
         print("Cmd handler called: " + str(bNo))
 
     def createBackground():
-        Imagelocation = Image.open('C:\\Users\\tavss\\OneDrive\\Dokumenter\\GitHub\\Tkinter-Gui-Andegradsligning\\Gradient.png')
+        Imagelocation = Image.open("C:\\Users\\tavss\\OneDrive\\Dokumenter\\GitHub\\Tkinter-Gui-Andegradsligning\\Gradient.png")
         
         
     
