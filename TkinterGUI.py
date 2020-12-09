@@ -35,7 +35,7 @@ class Application(Frame):  # Application is a Frame (inheritance from Frame)
         # create 2 labels
         colors = ('#FA4EB2', '#DB3BE3', '#C142FD')    
         letter = ('A','B','C')
-        for row in range(0,3):
+        for row in range(0,7):
             l=Label(self, text=letter[row] + ' value', justify="left", bg=colors[row])
             l.grid(row=row, column=0, sticky=S+W+N+E)
 
