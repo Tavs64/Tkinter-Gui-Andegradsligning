@@ -16,7 +16,6 @@ class Application(Frame):  # Application is a Frame (inheritance from Frame)
         background_label = Label(top, image=Gradient)
         background_label.place(x=0, y=0, relwidth=1, relheight=1)
 
-
     def createWidgets(self):
         top=self.winfo_toplevel()
         #top.geometry("500x500")
@@ -24,28 +23,29 @@ class Application(Frame):  # Application is a Frame (inheritance from Frame)
         top.columnconfigure(0, weight=1)  # toplevel window colums scalable
 
         # rows with minimum size and equal weights
-        for row in range(0,5):
-            self.rowconfigure(row, weight=1 , minsize=100)
+        for row in range(0,6):
+            self.rowconfigure(row, weight=1 , minsize=50)
 
         # columns with different scale
-        for i in range(0,4):
-            self.columnconfigure(i, weight=i, minsize=300)
+        for i in range(0,5):
+            self.columnconfigure(i, weight=i, minsize=150)
 
-        # create 3 labels
+        # create 3 labels and 3 inputs
         colors = ('#FA4EB2','#d1ff00','#DB3BE3','#d1ff00','#C142FD')    
         letter = ('A','error','B','error','C')
         for row in range(0,5):
             if (row % 2 != 1):
                 l=Label(self, text=letter[row] + ' value', justify="left", bg=colors[row])
                 l.grid(row=row, column=0, sticky=S+W+N+E)
-        
+            #else:
 
+        
         # create 3 buttons
-        for i in range(1,4):
+        for i in range(2,5):
             self.columnconfigure(i, weight=i) # , minsize=200
             def cmd(no=i):  # hidden argument trick
                 self.commandHandler(no)  
-            Button(self, text=str(i), command=cmd).grid(row=2, column=i, sticky=N+S+E+W)
+            Button(self, text=str(i), command=cmd).grid(row=5, column=i, sticky=N+S+E+W)
 
 root = Tk()
 
