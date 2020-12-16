@@ -1,7 +1,6 @@
 from tkinter import *
 import sys
 
-
 class Application(Frame):  # Application is a Frame (inheritance from Frame)
     def __init__(self, master):
         Frame.__init__(self, master) 
@@ -25,19 +24,21 @@ class Application(Frame):  # Application is a Frame (inheritance from Frame)
         top.columnconfigure(0, weight=1)  # toplevel window colums scalable
 
         # rows with minimum size and equal weights
-        for row in range(0,3):
+        for row in range(0,5):
             self.rowconfigure(row, weight=1 , minsize=100)
 
         # columns with different scale
         for i in range(0,4):
             self.columnconfigure(i, weight=i, minsize=300)
 
-        # create 2 labels
-        colors = ('#FA4EB2', '#DB3BE3', '#C142FD')    
-        letter = ('A','B','C')
-        for row in range(0,7):
-            l=Label(self, text=letter[row] + ' value', justify="left", bg=colors[row])
-            l.grid(row=row, column=0, sticky=S+W+N+E)
+        # create 3 labels
+        colors = ('#FA4EB2','#d1ff00','#DB3BE3','#d1ff00','#C142FD')    
+        letter = ('A','error','B','error','C')
+        for row in range(0,5):
+            if (row % 2 != 1):
+                l=Label(self, text=letter[row] + ' value', justify="left", bg=colors[row])
+                l.grid(row=row, column=0, sticky=S+W+N+E)
+        
 
         # create 3 buttons
         for i in range(1,4):
