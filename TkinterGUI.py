@@ -3,6 +3,7 @@ import sys
 
 solve1_text = "Solution 1"
 solve2_text = "Solution 2"
+equation_text ="Equation"
 class Application(Frame):  # Application is a Frame (inheritance from Frame)
     def __init__(self, master):
         Frame.__init__(self, master) 
@@ -40,7 +41,7 @@ class Application(Frame):  # Application is a Frame (inheritance from Frame)
                 l=Label(self, text=letter[row] + ' value', justify="left", bg=colors[row]) # istedet for at lave 3 seperate knapper, så bruger vi bare denne kode og nogle tupler
                 l.grid(row=row, column=0, sticky=S+W+N+E) # placere dem ordenligt
                 l2=Label(self,justify="left",bg=colors[row]) # udfylder en tom celle med farve så det ser pænt ud
-                l2.grid(row=row,column=1, stick=S+W+N+E) # placere dem ordenligt
+                l2.grid(row=row,column=1, sticky=S+W+N+E) # placere dem ordenligt
 
                 entryA = Entry(self)
                 entryB = Entry(self)
@@ -54,6 +55,11 @@ class Application(Frame):  # Application is a Frame (inheritance from Frame)
                 solve1.grid(row=3, column=2)
                 solve2=Label(self,text=solve2_text,justify="left",bg=colors[5])
                 solve2.grid(row=3, column=4)
+
+                equation1=Label(self,text=equation_text,justify="left",bg=colors[5])
+                equation1.grid(row=4, column=2, columnspan=3,sticky=S+W+N+E)
+
+
             #else:
 
         
