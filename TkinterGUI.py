@@ -30,7 +30,7 @@ class Application(Frame):  # Application is a Frame (inheritance from Frame)
         for i in range(0,5):
             self.columnconfigure(i, weight=i, minsize=150)
 
-        # create 3 labels and 3 inputs
+        # create 3 labels and 3 inputsø
         colors = ('#FA4EB2','#d1ff00','#DB3BE3','#d1ff00','#C142FD')    
         letter = ('A','error','B','error','C')
         for row in range(0,5):
