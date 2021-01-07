@@ -30,13 +30,23 @@ class Application(Frame):  # Application is a Frame (inheritance from Frame)
         for i in range(0,5):
             self.columnconfigure(i, weight=i, minsize=150)
 
-        # create 3 labels and 3 inputsø
+        # create 3 labels and 3 inputs
         colors = ('#FA4EB2','#d1ff00','#DB3BE3','#d1ff00','#C142FD')    
         letter = ('A','error','B','error','C')
         for row in range(0,5):
             if (row % 2 != 1):
                 l=Label(self, text=letter[row] + ' value', justify="left", bg=colors[row])
                 l.grid(row=row, column=0, sticky=S+W+N+E)
+                l2=Label(self,justify="left",bg=colors[row])
+                l2.grid(row=row,column=1, stick=S+W+N+E)
+
+                entryA = Entry(self)
+                entryB = Entry(self)
+                entryC = Entry(self)
+
+                entryA.grid(row=0, column=1)
+                entryB.grid(row=2, column=1)
+                entryC.grid(row=4, column=1)
             #else:
 
         
