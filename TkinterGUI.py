@@ -6,7 +6,7 @@ solve2_text = "Solution 2"
 equation_text ="Equation"
 class Application(Frame):  # Application is a Frame (inheritance from Frame)
     def __init__(self, master):
-        Frame.__init__(self, master) 
+        Frame.__init__(self, master, bg='#E33B49') 
         self.grid(sticky=N+S+E+W) # put frame in toplevel window
         #self.createBackground()
         self.createWidgets()
