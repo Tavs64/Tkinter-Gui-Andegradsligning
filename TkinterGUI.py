@@ -1,6 +1,8 @@
 from tkinter import *
 import sys
 
+solve1_text = "Solution 1"
+solve2_text = "Solution 2"
 class Application(Frame):  # Application is a Frame (inheritance from Frame)
     def __init__(self, master):
         Frame.__init__(self, master) 
@@ -31,14 +33,14 @@ class Application(Frame):  # Application is a Frame (inheritance from Frame)
             self.columnconfigure(i, weight=i, minsize=150)
 
         # create 3 labels and 3 inputs
-        colors = ('#FA4EB2','#d1ff00','#DB3BE3','#d1ff00','#C142FD')    
+        colors = ('#FA4EB2','#d1ff00','#DB3BE3','#d1ff00','#C142FD','#ffffff')    
         letter = ('A','error','B','error','C')
-        for row in range(0,5):
-            if (row % 2 != 1):
-                l=Label(self, text=letter[row] + ' value', justify="left", bg=colors[row])
-                l.grid(row=row, column=0, sticky=S+W+N+E)
-                l2=Label(self,justify="left",bg=colors[row])
-                l2.grid(row=row,column=1, stick=S+W+N+E)
+        for row in range(0,5): # laver 5 rows
+            if (row % 2 != 1): # udfylder kun hver anden (0,2,4)
+                l=Label(self, text=letter[row] + ' value', justify="left", bg=colors[row]) # istedet for at lave 3 seperate knapper, så bruger vi bare denne kode og nogle tupler
+                l.grid(row=row, column=0, sticky=S+W+N+E) # placere dem ordenligt
+                l2=Label(self,justify="left",bg=colors[row]) # udfylder en tom celle med farve så det ser pænt ud
+                l2.grid(row=row,column=1, stick=S+W+N+E) # placere dem ordenligt
 
                 entryA = Entry(self)
                 entryB = Entry(self)
@@ -47,6 +49,11 @@ class Application(Frame):  # Application is a Frame (inheritance from Frame)
                 entryA.grid(row=0, column=1)
                 entryB.grid(row=2, column=1)
                 entryC.grid(row=4, column=1)
+
+                solve1=Label(self,text=solve1_text,justify="left",bg=colors[5])
+                solve1.grid(row=3, column=2)
+                solve2=Label(self,text=solve2_text,justify="left",bg=colors[5])
+                solve2.grid(row=3, column=4)
             #else:
 
         
